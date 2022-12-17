@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#navMenu>span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: black;
+    cursor: pointer;
+}
+
+#navMenu>span:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+#navMenu,
+#navMenu>span {
+    transition: all 0.4s ease-in-out;
+}
+
+#navMenu.active {
+    transition-delay: 0.8s;
+    transform: rotate(45deg);
+}
+
+#navMenu.active>span:nth-child(2) {
+    width: 0px;
+}
+
+#navMenu.active>span:first-child,
+#navMenu.active:last-child {
+    transition-delay: 0.4s;
+}
+
+#navMenu.active>span:first-child {
+    transform: translateY(18px);
+}
+
+#navMenu.active>span:last-child {
+    transform: translateX(0px) rotate(90deg);
+}
